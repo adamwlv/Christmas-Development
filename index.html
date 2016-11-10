@@ -199,6 +199,14 @@
         
         .view-container{background: url(img/blur.jpg) no-repeat center center fixed;}
         
+        .slider{
+        position: absolute;
+  background: url("img/reveal.jpg") no-repeat center center fixed;
+  width: 50%;
+        height: 100%;
+            display: none;
+        }
+        
         #bauble {
             position: absolute;
             left: -316px;
@@ -262,6 +270,7 @@
     <div class="view-container">
          <!--<div class="snowglobe"></div>-->
     <div id="bauble" class="bauble" data-id="baubleone"></div>
+        <div class="slider"></div>
         </div>
    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script>
@@ -304,11 +313,13 @@
             $(".bauble").css("top","0px");
             $(".bauble").addClass("active");
             $(".bauble").removeClass("inactive");
-            $(".bauble").css("display", "block"); 
+            $(".bauble").css("display", "block");
+            $(".slider").css("display", "none"); 
+            
             
             
 		} else if(button == 'use-slider')  {
-			$(".bauble").css("left","0px");
+			$(".slider").css("display", "block"); 
             $(".bauble").addClass("active");
             $(".bauble").removeClass("active");
             $(".bauble").css("display", "none"); 
@@ -338,18 +349,22 @@
                 
                 
                 if(view == 'image-one') {
-                  $(".view-container").css("background-image","url(img/blur.jpg)");
-                  $("#bauble").css("background-image","url(img/reveal.jpg)");
+                    $(".view-container").css("background-image","url(img/blur.jpg)");
+                    $("#bauble").css("background-image","url(img/reveal.jpg)");
+                    $(".slider").css("background-image","url(img/reveal.jpg)");
                 }
                 else if(view=='image-two'){
-                    $("view-container").css("background-image","url(http://www.intrawallpaper.com/static/images/background_patterns_lines_shadow_43860_1920x1080.jpg)");
-                  $("#bauble").css("background-image","url(img/bg2.jpg)");
+                    $(".view-container").css("background-image","url(http://www.intrawallpaper.com/static/images/background_patterns_lines_shadow_43860_1920x1080.jpg)");
+                    $("#bauble").css("background-image","url(img/bg2.jpg)");
+                    $(".slider").css("background-image","url(img/bg2.jpg)");
                     
                 }
                 else if(view=='image-three'){
                      $(".view-container").css("background-image","url(http://www.intrawallpaper.com/static/images/abstract-mosaic-background.png)");  
                      $("#bauble").css("background-image","url(http://www.intrawallpaper.com/static/images/abstract-mosaic-background.png)");
+                     $(".slider").css("background-image","url(http://www.intrawallpaper.com/static/images/abstract-mosaic-background.png)");
                     
+                    //condense to be variable var imgThree = ("http://www.intrawallpaper.com/static/images/abstract-mosaic-background.png");
                 }
                 
                 
