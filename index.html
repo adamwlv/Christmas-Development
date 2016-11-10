@@ -13,27 +13,43 @@
             padding: 0;
             width: 100%;
             height: 100%;
-            background: url(img/blur.jpg) no-repeat center center fixed;
             background-size: cover;
             font-family: 'Roboto', sans-serif;
             
         }
+       
         
         ul {
             margin: 0;
         }
         
         .options {
-            background: #ccc;
+            background: rgba(0,0,0,0.8);
             color: #142E4C;
             width: 100%;
+            height:100%;
             list-style: none;
             cursor:pointer;
+            display: none;
+            position: absolute;
+            z-index: 5;
         }
         
         .options li {
             display:inline-block;
             padding:5px;
+            background:#54baa1;
+            transition: all ease-in-out 0.2s;
+            width: 30%;
+            margin: 20px;
+            height:200px;
+            text-align: center;
+            line-height: 200px;
+        }
+        
+         .options li:hover {
+             background: #7bc4b0;
+             transition: all ease-in-out 0.2s;
         }
         
         .header{
@@ -41,6 +57,12 @@
             width: 100%;
             background: #142e4c;
             position: relative;
+            z-index: 2
+        }
+        
+        .hamburger{
+            cursor: pointer;
+            float: left;
         }
         
         .header .options{
@@ -67,6 +89,116 @@
         
         .header svg{width:150px; cursor: pointer;}
         
+        .snowglobe {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+  z-index: 1;
+  	transform: translate3d(0,0,0);
+    -webkit-transform: translate3d(0,0,0);
+    -webkit-backface-visibility: hidden;
+}
+.snowglobe .flake {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    color: rgba(0,0,0,0);
+    text-shadow: 0 0 3px rgba(255,255,255,1);
+    opacity: 0;
+    transform: translate3d(0,0,0);
+    -webkit-transform: translate3d(0,0,0);
+    -webkit-backface-visibility: hidden;
+}
+
+@-webkit-keyframes snowing1{
+  0%{ opacity: 1; }
+  10% { -webkit-transform: translate3d(25px,0,0); }
+  20% { -webkit-transform: translate3d(-25px,0,0); }
+  30% { -webkit-transform: translate3d(25px,0,0); }
+  40% { -webkit-transform: translate3d(-25px,0,0); }
+  50% { -webkit-transform: translate3d(25px,0,0); }
+  60% { -webkit-transform: translate3d(-25px,0,0); }
+  70% { -webkit-transform: translate3d(25px,0,0); }
+  80% { -webkit-transform: translate3d(-25px,0,0); }
+  90% { -webkit-transform: translate3d(25px,0,0); opacity: 1; }
+  100% { top: 150%; opacity: 0; }
+}
+
+@-moz-keyframes snowing1{
+  0%{ opacity: 1; }
+  10% { -moz-transform: translate3d(25px,0,0); }
+  20% { -moz-transform: translate3d(-25px,0,0); }
+  30% { -moz-transform: translate3d(25px,0,0); }
+  40% { -moz-transform: translate3d(-25px,0,0); }
+  50% { -moz-transform: translate3d(25px,0,0); }
+  60% { -moz-transform: translate3d(-25px,0,0); }
+  70% { -moz-transform: translate3d(25px,0,0); }
+  80% { -moz-transform: translate3d(-25px,0,0); }
+  90% { -moz-transform: translate3d(25px,0,0); opacity: 1; }
+  100% { top: 150%; opacity: 0; }
+}
+
+@keyframes snowing1{
+  0%{ opacity: 1; }
+  10% { transform: translate3d(25px,0,0); }
+  20% { transform: translate3d(-25px,0,0); }
+  30% { transform: translate3d(25px,0,0); }
+  40% { transform: translate3d(-25px,0,0); }
+  50% { transform: translate3d(25px,0,0); }
+  60% { transform: translate3d(-25px,0,0); }
+  70% { transform: translate3d(25px,0,0); }
+  80% { transform: translate3d(-25px,0,0); }
+  90% { transform: translate3d(25px,0,0); opacity: 1; }
+  100% { top: 150%; opacity: 0; }
+}
+
+@-webkit-keyframes snowing2{
+  0%{ opacity: 1; }
+  10% { -webkit-transform: translate3d(-25px,0,0);  }
+  20% { -webkit-transform: translate3d(25px,0,0);  }
+  30% { -webkit-transform: translate3d(-25px,0,0);  }
+  40% { -webkit-transform: translate3d(25px,0,0);  }
+  50% { -webkit-transform: translate3d(-25px,0,0);  }
+  60% { -webkit-transform: translate3d(25px,0,0);  }
+  70% { -webkit-transform: translate3d(-25px,0,0);  }
+  80% { -webkit-transform: translate3d(25px,0,0);  }
+  90% { -webkit-transform: translate3d(-25px,0,0); opacity: 1;  }
+  100% { top: 150%; opacity: 0; }
+}
+
+@-moz-keyframes snowing2{
+  0%{ opacity: 1; }
+  10% { -moz-transform: translate3d(-25px,0,0);  }
+  20% { -moz-transform: translate3d(25px,0,0);  }
+  30% { -moz-transform: translate3d(-25px,0,0);  }
+  40% { -moz-transform: translate3d(25px,0,0);  }
+  50% { -moz-transform: translate3d(-25px,0,0);  }
+  60% { -moz-transform: translate3d(25px,0,0);  }
+  70% { -moz-transform: translate3d(-25px,0,0);  }
+  80% { -moz-transform: translate3d(25px,0,0);  }
+  90% { -moz-transform: translate3d(-25px,0,0); opacity: 1;  }
+  100% { top: 150%; opacity: 0; }
+}
+
+@keyframes snowing2{
+  0%{ opacity: 1; }
+  10% { transform: translate3d(-25px,0,0);  }
+  20% { transform: translate3d(25px,0,0);  }
+  30% { transform: translate3d(-25px,0,0);  }
+  40% { transform: translate3d(25px,0,0);  }
+  50% { transform: translate3d(-25px,0,0);  }
+  60% { transform: translate3d(25px,0,0);  }
+  70% { transform: translate3d(-25px,0,0);  }
+  80% { transform: translate3d(25px,0,0);  }
+  90% { transform: translate3d(-25px,0,0); opacity: 1;  }
+  100% { top: 150%; opacity: 0; }
+}
+        
+        .view-container{background: url(img/blur.jpg) no-repeat center center fixed;}
+        
         #bauble {
             position: absolute;
             left: -316px;
@@ -80,6 +212,7 @@
             cursor: move;
             border: 8px solid #fff;
             overflow: hidden;
+            /*z-index:3;*/ /*although this puts the bauble above the snow*/
             
             
         }
@@ -89,6 +222,7 @@
             height: 100%;
             position: relative;
             overflow: hidden;
+            background: url(img/blur.jpg) no-repeat center center fixed;
         }
         
         /*stops background image from displaying in bauble*/
@@ -117,16 +251,16 @@
 </head>
 
 <body>
-    <div class="options"><ul><li data-id="image-one">option1</li><li data-id="image-two">option2</li></ul></div>
+    <div class="options"><ul><li data-id="image-one">option 1</li><li data-id="image-two">option 2</li><li data-id="image-three">option 3</li></ul></div>
     <div class="header">
+        <div class="hamburger"><img width="30px" src="https://cdn4.iconfinder.com/data/icons/wirecons-free-vector-icons/32/menu-alt-512.png"></div>
         <div class="switch"><ul><li class="use-bauble">Use Bauble</li><li class="use-slider">Use Slider</li></ul></div>
           <!--<svg class="button swingimage" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 72.6 41" enable-background="new 0 0 72.6 41"><style type="text/css">.st0-explore-button{fill:none;stroke:#fff;stroke-width:1.5;stroke-miterlimit:10;} .st1-explore-button{fill:#fff;} .st2-explore-button{fill:none;stroke:#fff;stroke-width:2;stroke-miterlimit:10;} .st3-explore-button{fill:none;stroke:#fff;stroke-miterlimit:10;}</style><path class="st0-explore-button" d="M70 5.1v29.9c0 .9-.8 1.7-1.7 1.7h-64.5c-.9 0-1.7-.8-1.7-1.7v-29.9c0-.9.8-1.7 1.7-1.7h64.5c.9 0 1.7.8 1.7 1.7z"></path><circle class="st1-explore-button" cx="6.6" cy="26.5" r="1.2"></circle><path class="st1-explore-button" d="M7.4 12.8v2c0 .5-.4.9-.9.9s-.9-.4-.9-.9v-2c0-.5.4-.9.9-.9.5-.1.9.4.9.9z"></path><path class="st0-explore-button" d="M2.7 12.4c.3 0 .4.1.4.3v14.6c0 .2-.1.3-.3.3h-.1M69.4 12.4c-.3 0-.4.1-.4.3v14.6c0 .2.1.3.3.3h.1"></path><path class="st2-explore-button" d="M44.3 3.3c0-.3.1-.4.3-.4h7.8c.2 0 .3.1.3.3v.1M58.7 3.3c0-.3.1-.4.3-.4h3.2c.2 0 .3.1.3.3v.1"></path><path class="st3-explore-button" d="M9.7 6h52.9v28.1h-52.9z"></path></svg>-->
         <!--<div class="options">Show</div>-->
     </div>
-    <div class="sidebar">
-  
-    </div>
+   
     <div class="view-container">
+         <!--<div class="snowglobe"></div>-->
     <div id="bauble" class="bauble" data-id="baubleone"></div>
         </div>
    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
@@ -185,24 +319,105 @@
             
     });
             
+            $(".hamburger").on('click', function(){
+                $(".options").fadeIn(); 
+            });
+            
+            $("body").mouseup(function(e){
+                var subject = $(".options"); 
+
+                if(e.target.id != subject.attr('class'))
+                    {
+                        subject.fadeOut();
+                    }
+            });
+            
             $(".options li").on('click', function(){
                 
                 var view = $(this).attr('data-id');
                 
                 
                 if(view == 'image-one') {
-                  $("body").css("background","url(http://www.intrawallpaper.com/static/images/background_patterns_lines_shadow_43860_1920x1080.jpg)");  
+                  $(".view-container").css("background-image","url(img/blur.jpg)");
+                  $("#bauble").css("background-image","url(img/reveal.jpg)");
                 }
                 else if(view=='image-two'){
-                     $("body").css("background","url(http://www.intrawallpaper.com/static/images/abstract-mosaic-background.png)");  
+                    $("view-container").css("background-image","url(http://www.intrawallpaper.com/static/images/background_patterns_lines_shadow_43860_1920x1080.jpg)");
+                  $("#bauble").css("background-image","url(img/bg2.jpg)");
+                    
+                }
+                else if(view=='image-three'){
+                     $(".view-container").css("background-image","url(http://www.intrawallpaper.com/static/images/abstract-mosaic-background.png)");  
+                     $("#bauble").css("background-image","url(http://www.intrawallpaper.com/static/images/abstract-mosaic-background.png)");
                     
                 }
                 
-            });
-    
+                
+            });   
     
           
 });
+        
+        var flakeCount = 500;
+var flakes = [];
+
+function getRandom(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+function getWidth() {
+    var x = 0;
+    if (self.innerHeight) {
+        x = self.innerWidth;
+    }
+    else if (document.documentElement && document.documentElement.clientHeight) {
+        x = document.documentElement.clientWidth;
+    }
+    else if (document.body) {
+        x = document.body.clientWidth;
+    }
+    return x;
+}
+
+function getHeight() {
+    var y = 0;
+    if (self.innerHeight) {
+        y = self.innerHeight;
+    }
+    else if (document.documentElement && document.documentElement.clientHeight) {
+        y = document.documentElement.clientHeight;
+    }
+    else if (document.body) {
+        y = document.body.clientHeight;
+    }
+    return y;
+}
+window.onresize = function(event) {
+    width = getWidth();
+    height = getHeight();
+}
+
+var width = getWidth();
+var height = getHeight();
+var currentFlake = 0;
+var snowglobe = $(".snowglobe");
+while (currentFlake < flakeCount) {
+    var flake = $("<div></div>");
+    flake.addClass('flake');
+  	var duration = getRandom(30, 50);
+  	var delay = getRandom(0, 10) * 3;
+  	var func = getRandom(1,2) == 1 ? 'snowing1' : 'snowing2';
+    flake.css({'-webkit-animation' : func + ' ' + duration + 's ' + delay + 's infinite forwards',
+               '-moz-animation' : func + ' ' + duration + 's ' + delay + 's infinite forwards',
+               'animation' : func + ' ' + duration + 's ' + delay + 's infinite forwards',
+               fontSize :  getRandom(12, 32) + 'px',
+               top : getRandom(0, height) - height + 'px',
+               left : getRandom(0, width) + 'px',
+             });
+    flake.html("&#8226;");
+    newFlake = snowglobe.append(flake);
+    currentFlake++;
+}
        
     </script>
 </body>
